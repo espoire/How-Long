@@ -1,5 +1,4 @@
 const el = document.getElementById('how-long');
-
 el.innerHTML = getHowLong();
 
 function getHowLong() {
@@ -16,7 +15,7 @@ function millisToText(millis) {
     {name: 'hour', millis: 1000 * 60 * 60},
     {name: 'minute', millis: 1000 * 60},
     {name: 'second', millis: 1000},
-    {name: 'second', millis: 1},
+    {name: 'millisecond', millis: 1},
   ];
 
   let amount;
