@@ -1,12 +1,17 @@
-const el = document.getElementById('how-long');
+let el = document.getElementById('how-long');
 el.innerHTML = getHowLong();
 
 function getHowLong() {
-  const when = new Date('2022-04-22 10:55 PM');
+  const interval = getMillis();
+  return millisToText(interval);
+}
+
+function getMillis() {
+  const when = new Date('4/22/22 10:55 PM');
   const now = new Date();
   const interval = when - now;
 
-  return millisToText(interval);
+  return interval;
 }
 
 function millisToText(millis) {
