@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0;">
+	<head>
+		<meta charset="utf-8">
+		<title>How long?</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <style>
+      #how-long {
+        font-size: 100px;
+        text-align: center;
+      }
+    </style>
+		<script>
+			window.expose = function expose(key, value) {
+				if (value === undefined) {
+					value = key;
+					key = 'exposed';
+				}
+
+				console.log(`Exposing to global scope: window.${key} =`);
+				console.log(value);
+
+				window[key] = value;
+			}
+		</script>
+		<script type="module" src="Main.js"></script>
+	</head>
+
+	<body>
+    <h1 id="how-long"></h1>
+	</body>
+</html>
