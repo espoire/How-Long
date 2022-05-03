@@ -7,7 +7,7 @@ function getHowLong() {
 }
 
 function getMillis() {
-  const when = new Date('4/21/22 10:55 PM');
+  const when = new Date('6/25/2022 1:00 PM');
   const now = new Date();
   const interval = when - now;
 
@@ -16,6 +16,8 @@ function getMillis() {
 
 function millisToText(millis) {
   const units = [
+    {name: 'month', millis: 1000 * 60 * 60 * 24 * 7 * 4},
+    {name: 'week', millis: 1000 * 60 * 60 * 24 * 7},
     {name: 'day', millis: 1000 * 60 * 60 * 24},
     {name: 'hour', millis: 1000 * 60 * 60},
     {name: 'minute', millis: 1000 * 60},
@@ -27,7 +29,7 @@ function millisToText(millis) {
   let unit;
   for(unit of units) {
     amount = Math.floor(millis / unit.millis);
-    if(amount >= 1) break;
+    if(amount >= 2) break;
   }
   
   const plural = (amount > 1 ? 's' : '')
