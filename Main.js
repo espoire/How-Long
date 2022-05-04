@@ -16,8 +16,8 @@ function getMillis() {
 
 function millisToText(millis) {
   const units = [
-    {name: 'month', millis: 1000 * 60 * 60 * 24 * 7 * 4},
-    {name: 'week', millis: 1000 * 60 * 60 * 24 * 7},
+    // {name: 'month', millis: 1000 * 60 * 60 * 24 * 7 * 4},
+    // {name: 'week', millis: 1000 * 60 * 60 * 24 * 7},
     {name: 'day', millis: 1000 * 60 * 60 * 24},
     {name: 'hour', millis: 1000 * 60 * 60},
     {name: 'minute', millis: 1000 * 60},
