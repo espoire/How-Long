@@ -28,10 +28,16 @@ function millisToText(millis) {
   let amount;
   let unit;
   for(unit of units) {
-    amount = Math.floor(millis / unit.millis);
+    amount = millis / unit.millis;
+
     if(amount >= 2) break;
   }
   
   const plural = (amount > 1 ? 's' : '')
-  return `${amount} ${unit.name}${plural}`;
+  let amountText = `${Math.floor(amount)}`;
+  if (1.05 < amount && amount < 5) {
+    amountText = amount.toFixed(1);
+  }
+
+  return `${amountText} ${unit.name}${plural}`;
 }
