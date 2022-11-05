@@ -7,9 +7,10 @@ function getHowLong() {
 }
 
 function getMillis() {
-  const when = new Date('6/25/2022 1:00 PM');
+  const when = new Date('11/15/2022 10:57 PM');
   const now = new Date();
-  const interval = when - now;
+  const nowInEst = toEst(now);
+  const interval = when - nowInEst;
 
   return interval;
 }
@@ -40,4 +41,16 @@ function millisToText(millis) {
   }
 
   return `${amountText} ${unit.name}${plural}`;
+}
+
+function toEst(date) {
+  const localOffset = date.getTimezoneOffset();
+  const estOffset = 300;
+  const delta = estOffset - localOffset;
+
+  return addMinutes(date, delta);
+}
+
+function addMinutes(date, minutes) {
+  return new Date(date.getTime() + minutes * 60 * 1000);
 }
