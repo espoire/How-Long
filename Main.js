@@ -7,7 +7,7 @@ function getHowLong() {
 }
 
 function getMillis() {
-  const when = new Date('11/15/2022 10:57 PM');
+  const when = new Date('10/01/2024 2:00 PM');
   const now = new Date();
   const nowInEst = toEst(now);
   const interval = when - nowInEst;
